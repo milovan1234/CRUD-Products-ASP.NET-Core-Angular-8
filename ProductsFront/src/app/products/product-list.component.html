@@ -1,0 +1,44 @@
+<div class="card my-4">
+    <div class="card-header">
+        <span class="font-weight-bold">{{pageTitle}}</span>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-1 font-weight-bold">Search:</div>
+            <div class="col-sm-3">
+                <input type="search" class="form-control" [(ngModel)]="filterBy">
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-sm-3"><span class="font-weight-bold">Filter by:</span> {{filterBy}}</div>
+        </div>
+        <div class="table-responsive">
+            <div class="table" *ngIf='products && products.length'>
+                <thead>
+                    <tr>
+                        <th class="border">Id</th>
+                        <th class="border">Product Name</th>
+                        <th class="border">Price</th>
+                        <th class="border">Description</th>
+                        <th class="border">Edit</th>
+                        <th class="border">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products'>
+                        <td class="border">{{product.id}}</td>
+                        <td class="border">{{product.productName}}</td>
+                        <td class="border">{{product.price | currency:'RSD':'symbol':'1.2-2'}}</td>
+                        <td class="border">{{product.description}}</td>
+                        <td class="border">
+                            <button class="btn btn-info text-light">Edit</button>
+                        </td>
+                        <td class="border">
+                            <button class="btn btn-danger text-light">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
+    </div>
+</div>
