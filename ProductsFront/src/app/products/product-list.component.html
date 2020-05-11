@@ -10,10 +10,10 @@
             </div>
         </div>
         <div class="row my-3">
-            <div class="col-sm-3"><span class="font-weight-bold">Filter by:</span> {{filterBy}}</div>
+            <div class="col-sm-5"><span class="font-weight-bold">Filter by:</span> {{filterBy}}</div>
         </div>
         <div class="table-responsive">
-            <div class="table" *ngIf='products && products.length'>
+            <div class="table" *ngIf='filterProducts && filterProducts.length'>
                 <thead>
                     <tr>
                         <th class="border">Id</th>
@@ -25,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of filterProducts'>
                         <td class="border">{{product.id}}</td>
                         <td class="border">{{product.productName}}</td>
                         <td class="border">{{product.price | currency:'RSD':'symbol':'1.2-2'}}</td>
