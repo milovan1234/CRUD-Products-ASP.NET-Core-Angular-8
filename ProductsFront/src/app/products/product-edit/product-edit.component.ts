@@ -13,6 +13,9 @@ export class ProductEditComponent implements OnInit {
   public product: IProduct;
   public editProductForm: FormGroup;
   constructor(private route: ActivatedRoute, private router: Router, private productService:ProductService) {
+    this.product.productName = '';
+    this.product.price = 0.0;
+    this.product.description = '';
   }
 
   ngOnInit(): void {

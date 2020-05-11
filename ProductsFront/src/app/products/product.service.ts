@@ -22,4 +22,7 @@ export class ProductService {
   updateProduct(productId: number, product: IProduct): any {
     return this.http.put(this.productsUrl+productId, product);
   }
+  addProduct(product:IProduct): Observable<IProduct> {
+      return this.http.post<IProduct>(this.productsUrl, product);
+  }
 }

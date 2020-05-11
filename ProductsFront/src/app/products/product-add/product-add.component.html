@@ -1,0 +1,35 @@
+<div class="card my-4">
+    <div class="card-header">
+        <span class="font-weight-bold">Add</span>
+    </div>
+    <div class="card-body" *ngIf="addProductForm">
+        <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+            <div class="form-group row">
+                <label for="inputName" class="col-sm-2 col-form-label">Product name:</label>
+                <div class="col-sm-3">
+                  <input type="text" formControlName="productName" class="form-control" id="inputName" placeholder="Product name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPrice" class="col-sm-2 col-form-label">Price:</label>
+                <div class="col-sm-3">
+                  <input type="number" formControlName="price" class="form-control" id="inputPrice" placeholder="Price">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputDescription" class="col-sm-2 col-form-label">Description:</label>
+                <div class="col-sm-3">
+                  <textarea class="form-control" rows="4" formControlName="description" id="inputDescription" placeholder="Description"></textarea>
+                </div>
+              </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Add Product</button>
+              </div>
+            </div>
+          </form>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-outline-info font-weight-bold" [routerLink]="['/products']">Back</a>
+    </div>
+</div>
