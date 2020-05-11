@@ -31,7 +31,7 @@
                         <td class="border">{{product.price | currency:'RSD':'symbol':'1.2-2'}}</td>
                         <td class="border">{{product.description}}</td>
                         <td class="border">
-                            <button class="btn btn-info text-light">Edit</button>
+                            <a class="btn btn-info text-light" [routerLink]="['/product-edit', product.id]">Edit</a>
                         </td>
                         <td class="border">
                             <button class="btn btn-danger text-light" (click)='deleteProduct(product.id)'>Delete</button>
