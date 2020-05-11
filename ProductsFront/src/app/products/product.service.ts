@@ -8,11 +8,12 @@ import { catchError,tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  public productsUrl = 'http://localhost:54150/api/products';
+  public productsUrl = 'http://localhost:54150/api/products/';
   constructor(private http: HttpClient) { }
     getProducts(): Observable<IProduct[]> {
-      return this.http.get<IProduct[]>(this.productsUrl).pipe(
-          tap(data => console.log('All: ' + JSON.stringify(data)))
-      );
+      return this.http.get<IProduct[]>(this.productsUrl);
+  }
+  deleteProduct(productId: number): any {
+      return this.http.delete(this.productsUrl+productId);
   }
 }
